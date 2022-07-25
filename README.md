@@ -6,10 +6,17 @@ This repository contains sources of KAPC. Here will be available only uncompress
 
 ## Tool commands
 
+### **init for use**
+
+1. cloning
+   * for users `git clone https://github.com/EsupPortail/KAPC.git`
+   * for kapc developpers `git clone git@github.com:EsupPortail/KAPC.git`
+2. cd KAPC
+
 ### **build locally the tool**
 
 1. check that you have at least java 11 available: `java --version`
-2. from a console (from the project directory) run `javac utils.java`
+2. from a console (from the project directory) run `javac utils.java` to compile
 3. check that a `utils.class` is created without error
 
 You should run all commands from this project directory !
