@@ -60,6 +60,14 @@ public class utils {
             System.err.printf("Zip File '%s' isn't readable", zipFile);
         }
 
+        // delete targetDir
+        if (target.toFile().exists()) {
+            Files.walk(target)
+                    .sorted(Comparator.reverseOrder())
+                    .map(Path::toFile)
+                    .forEach(File::delete);
+            target.toFile().delete();
+        }
         // create target at init
         if (!target.toFile().exists()) {
             target.toFile().mkdirs();
