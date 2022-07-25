@@ -205,7 +205,7 @@ public class utils {
     private static void zipFolder(Path source, Path target) throws IOException {
 
         // get folder name as zip file name
-        String zipFileName = target.toAbsolutePath() + "/" + source.getFileName().toString() + ".zip";
+        String zipFileName = target.toAbsolutePath() + File.separator + source.getFileName().toString() + ".zip";
 
         try (ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(zipFileName))) {
 
@@ -255,13 +255,13 @@ public class utils {
 
     // zip all files into one
     private static void compress(Path sourceDir, String zipFileName) {
-        String zipFilePath = sourceDir.toFile().getAbsoluteFile() + "/" + zipFileName;
+        String zipFilePath = sourceDir.toFile().getAbsoluteFile() + File.separator + zipFileName;
         System.out.printf("Creating Archive '%s'%n", zipFilePath);
         try {
             final ZipOutputStream outputStream = new ZipOutputStream(new FileOutputStream(zipFilePath));
             Files.walkFileTree(sourceDir, new SimpleFileVisitor<Path>() {
                 @Override
-                
+
                 public FileVisitResult visitFile(Path file, BasicFileAttributes attributes) {
 
                     try {
