@@ -1,0 +1,213 @@
+/*********************************************/
+/**** portfolios étudiants et enseignants ****/
+/****     répertoires SAés et stages      ****/
+/*********************************************/
+
+/**** couleurs ****/
+div.first-node {color:#FFFFFF;} /* libellés des pages en blanc (placé ici parce que si sur l'élément est invisible dans le parent) */
+.asmUnit > div[name=lbl-div] {background-color: #0F059C}
+#main-portfolio #portfolio-container .boutons-couleur > div.node-header .btn-group .button {color:white}
+#main-portfolio #portfolio-container .asmStructure .boutons-couleur > div.node-header .btn-group .button {color:black}
+
+/* menus affichés en blanc dans un rectangle noir */
+#main-portfolio #portfolio-container .menus a,
+#main-portfolio #portfolio-container .add-button,
+#main-portfolio #portfolio-container .sharing-button {color:white; background-color:black;}
+
+/* menus envoyer des évaluations par les pairs et tuteurs pro */
+#main-portfolio #portfolio-container button.add-button[onclick*="soumettreAutres"] {background-color:red}
+
+/* évaluation des pages actions et compétences */
+.auto-eval .EA01:hover:after, .eval-pair .EA01:hover:after, .eval-tuteur .EA01:hover:after {content: "Féliciations du jury"}
+.auto-eval .EA01:hover, .eval-pair .EA01:hover, .eval-tuteur .EA01:hover {font-size:50%}
+.auto-eval .EN01:hover:after, .eval-pair .EN01:hover:after, .eval-tuteur .EN01:hover:after {content: "Féliciations du jury"}
+.auto-eval .EN01:hover, .eval-pair .EN01:hover, .eval-tuteur .EN01:hover {font-size:50%}
+.EA01,.EN01 {
+  color:#FFFFFF !important; background-color:#4ABF08 !important; padding:6px;
+}
+.auto-eval .EA02:hover:after, .eval-pair .EA02:hover:after, .eval-tuteur .EA02:hover:after {content: "Validé avec brio"}
+.auto-eval .EA02:hover, .eval-pair .EA02:hover, .eval-tuteur .EA02:hover {font-size:50%}
+.auto-eval .EN02:hover:after, .eval-pair .EN02:hover:after, .eval-tuteur .EN02:hover:after {content: "Validé avec brio"}
+.auto-eval .EN02:hover, .eval-pair .EN02:hover, .eval-tuteur .EN02:hover {font-size:50%}
+.EA02, .EN02 {
+  color:#FFFFFF !important; background-color:#668753 !important; padding:6px;
+}
+.auto-eval .EA03:hover:after, .eval-pair .EA03:hover:after, .eval-tuteur .EA03:hover:after  {content: "Validé"}
+.auto-eval .EA03:hover, .eval-pair .EA03:hover, .eval-tuteur .EA03:hover {font-size:50%}
+.auto-eval .EN03:hover:after, .eval-pair .EN03:hover:after, .eval-tuteur .EN03:hover:after  {content: "Validé"}
+.auto-eval .EN03:hover, .eval-pair .EN03:hover, .eval-tuteur .EN03:hover {font-size:50%}
+.EA03, .EN03 {
+  color:#FFFFFF !important; background-color:#9AA495 !important; padding:6px;
+}
+.auto-eval .EA04:hover:after, .eval-pair .EA04:hover:after, .eval-tuteur .EA04:hover:after {content: "Non validé"}
+.auto-eval .EA04:hover, .eval-pair .EA04:hover, .eval-tuteur .EA04:hover {font-size:50%}
+.auto-eval .EN04:hover:after, .eval-pair .EN04:hover:after, .eval-tuteur .EN04:hover:after {content: "Non validé"}
+.auto-eval .EN04:hover, .eval-pair .EN04:hover, .eval-tuteur .EN04:hover {font-size:50%}
+.EA04, .EN04 {
+  color:#FFFFFF !important; background-color:#FE0303 !important; padding:6px;
+}
+
+/* évaluation des apprentissages critiques */
+.sect-evals .EVAL0:hover span::after {content: "non évalué"}
+.EVAL0 {
+  background-image:url("../../karuta/img/gray.png"); background-repeat:no-repeat; background-position:10px 9px;
+  display:inline-block; padding-left:40px;
+}
+
+.sect-evals .EVAL1:hover span::after {content: "vert"}
+.EVAL1 {
+  background-image:url("../../karuta/img/green.png"); background-repeat:no-repeat; background-position:10px 9px;
+  display:inline-block; padding-left:40px;
+}
+
+.sect-evals .EVAL2:hover span::after {content: "orange"}
+.EVAL2 {
+  background-image:url("../../karuta/img/orange.png"); background-repeat:no-repeat; background-position:10px 9px;
+  display:inline-block; padding-left:40px;
+}
+
+.sect-evals .EVAL3:hover span::after {content: "rouge"}
+.EVAL3 {
+  background-image:url("../../karuta/img/red.png"); background-repeat:no-repeat; background-position:10px 9px;
+  display:inline-block; padding-left:40px;
+}
+
+.apprentissage-mobilise-tuteur2 .not-submitted,
+.apprentissage-mobilise-pair2 .not-submitted {
+  font-size:50%; width:60px; text-align:center;
+}
+
+#main-portfolio #portfolio-container .apprentissage-mobilise-tuteur2 .add-button.submitbutton,
+#main-portfolio #portfolio-container .apprentissage-mobilise-pair2 .add-button.submitbutton {
+  font-size:50%; background-color:red; padding:1px 5px; border-radius:0.25rem;
+}
+
+#main-portfolio #portfolio-container .evaluation-pair .add-button.submitbutton,
+#main-portfolio #portfolio-container .evaluation-tuteur .add-button.submitbutton {
+  background-color:red; border-radius:0.25rem;
+}
+
+.apprentissage-mobilise-pair2 .submitted,
+.apprentissage-mobilise-tuteur2 .submitted {
+  font-size:50%; width:60px; text-align:center;
+}
+
+.sect-evals {padding-right:0px; padding-bottom:5px; padding-top:5px; margin-left:-20px}
+
+
+
+/**** global ****/
+#main-body[userrole=etudiant] #navbar-home { display:none;}
+/* .traces-associees .select-trace .td1 {display:none;} n'est plus utilisé */
+/* .enseignant-select .td1 {display:none;}              n'est plus utilisé */
+body[userrole='etudiant'] .prenom_nom {display:none}
+
+/**** page bienvenue ****/
+.formation-actuelle .btn {color:white;}
+#main-portfolio #portfolio-container .formation-actuelle a {color:white;}
+
+
+/**** page consentement ****/
+.fichier-consentement .button {background-color:black; color:white; padding:15px; font-weight: bold;}
+
+
+/**** pages formation ****/
+.formations-actuelles .image-gauche .resource-node,
+.autres-formations .image-gauche .resource-node,
+.competences-hors-referentiel .image-gauche .resource-node {
+  position:relative; top:50%; transform:translateY(-50%);   /* centrer le logo verticalement par rapport au texte */
+}
+.formation-element .niveau-developpement div[name=cnt-div],
+.competences-hors-referentiel .niveau-developpement-hors-referentiel div[name=cnt-div] {margin-left:2em;}
+.formation-element .apprentissage-critique div[name=cnt-div],
+.competences-hors-referentiel .apprentissage-critique-hors-referentiel div[name=cnt-div] {margin-left:3em;}
+.standard-resource-xwide .formation-actuelle {
+  margin-left:auto; margin-right:auto;
+}
+.competence-referentiel > div.node-header,
+.competence-hors-referentiel > div.node-header {
+  color:white; background-color:#0F059C;   /* placé ici pour que ça ne sorte pas dans les booîtes de choix de la section Mes Actions */
+}
+#main-portfolio #portfolio-container .competence-hors-referentiel > div.node-header .collapsible,
+#main-portfolio #portfolio-container .competence-referentiel > div.node-header .collapsible {color:white;}
+.formation-element .apprentissage-critique .node-header,
+.competences-hors-referentiel .apprentissage-critique-hors-referentiel .node-header {
+   padding-bottom:5px;
+   padding-top:5px;
+}
+/* .formation-element .domaine-select .td1 {display:none;}  n'est plus utilisé */
+
+
+/**** page traces ****/
+.page-traces .trace-etudiant-document .node-header,
+.page-traces .trace-etudiant-url .node-header,
+.page-traces .trace-etudiant-oembed .node-header,
+.page-traces .trace-etudiant-texte .node-header {
+  color:#ffffff; background-color:#1F92F8;
+}
+.page-traces .texte-droit .resource-node {
+  position:relative; top:50%; transform:translateY(-50%);  /* centrer le texte verticalement par rapport au logo */
+}
+/* .page-traces .document-etudiant .td1, .page-traces .url-etudiant .td1, .page-traces .oembed-etudiant .td1, .page-traces .texte-etudiant .td1 {display:none;}  n'est plus utilisé */
+
+
+/**** pages actions ****/
+.section-actions .texte-droit .resource-node,
+.page-action-sae-evaluateurs-auteur .libelle-droit .resource-node,
+.page-action-sae-evaluateurs-etudiant .libelle-droit .resource-node,
+.page-action-stage .libelle-droit .resource-node,
+.page-action-autre .libelle-droit .resource-node {
+  position:relative; top:50%; transform:translateY(-50%);  /* centrer le libellé verticalement par rapport au logo */
+}
+.page-action-sae-evaluateurs-auteur .first-node .sharing-button,
+.page-action-sae-evaluateurs-etudiant .first-node .sharing-button,
+.page-action-stage-evaluateurs-etudiant .first-node .sharing-button,
+.page-action-stage-evaluateurs-auteur .first-node .sharing-button,
+.page-action-stage .first-node .sharing-button,
+.page-action-autre .first-node .sharing-button {display:none;}
+/* .page-action-sae-evaluateurs-auteur .document-instructions .td1, .page-action-sae-evaluateurs-etudiant .document-instructions .td1 {display:none;}  n'est plus utilisé */
+
+
+/**** pages compétences ****/
+.createreport .libelleAction,
+.createreport .libelleApprentissage {padding-top:0px;}
+.page-competence-specification .libelle-droit .resource-node {
+  position:relative; top:50%; transform:translateY(-50%); /* centrer le libellé verticalement par rapport au logo */
+}
+.composantes-associees .composante-essentielle-element .node-header,
+.situations-associees .situation-element .node-header {
+  padding-bottom:5px; padding-top:5px;
+}
+.page-competence-specification .first-node .sharing-button {display:none;}
+
+/* pages compétences hors référentiel */
+.competences-hors-referentiel .ncode {display:none}
+body[userrole='etudiant'] #edit-window-body .ncode,
+body[userrole='etudiant'] #edit-window-body .nvalue {display:none}
+
+
+/* pour cacher la poubelle pour les suppressions automatiques */
+.hideBin > .node-header .fa-trash-alt {display:none}
+
+
+
+/********************************/
+/**** portfolios enseignants ****/
+/********************************/
+
+.submit-inreport a.btn {color:white}
+
+.nbelement {width:30%;margin-left:31%;margin-right:39%}
+.nbelement .td1 {width:80%}
+.nbelement .td2 {width:10%}
+.nbelement .td3 {width:10%}
+
+
+
+/*************************************/
+/**** référentiels de compétences ****/
+/*************************************/
+
+.page-competence-niveaux .niveau-developpement div[name=cnt-div] {margin-left:2em;}
+.page-competence-niveaux .apprentissage-critique div[name=cnt-div] {margin-left:3em;}
+.page-competence-niveaux .domaine-select .td1 {display:none;}
