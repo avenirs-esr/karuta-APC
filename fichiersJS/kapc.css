@@ -3,6 +3,12 @@
 /****     répertoires SAés et stages      ****/
 /*********************************************/
 
+/* cacher poubelle auto-évaluation étudiant pages compétences */
+#main-body[userrole='etudiant'] .auto-evaluation-bilan-referentiel .fa-trash-alt {display:none}
+#main-body[userrole='etudiant'] .auto-evaluation-bilan-referentiel .content .fa-trash-alt {display:block}
+#main-body[userrole='etudiant'] .auto-evaluation-bilan-hors-referentiel .fa-trash-alt {display:none}
+#main-body[userrole='etudiant'] .auto-evaluation-bilan-hors-referentiel .content .fa-trash-alt {display:block}
+
 /**** couleurs ****/
 div.first-node {color:#FFFFFF;} /* libellés des pages en blanc (placé ici parce que si sur l'élément est invisible dans le parent) */
 .asmUnit > div[name=lbl-div] {background-color: #0F059C}
@@ -95,6 +101,27 @@ div.first-node {color:#FFFFFF;} /* libellés des pages en blanc (placé ici parc
 .sect-evals {padding-right:0px; padding-bottom:5px; padding-top:5px; margin-left:-20px}
 
 
+/* affichage des évaluations des compétences dans le tableau de bord du bilan */
+.page-tableau-bord-competences-formations .EN01 span[name=label], .page-tableau-bord-competences-transversales .EN01 span[name=label] 
+ {display:none;} 
+.page-tableau-bord-competences-formations .EN01:hover::after, .page-tableau-bord-competences-transversales .EN01:hover::after
+ {content: "Excellent"}
+
+.page-tableau-bord-competences-formations .EN02 span[name=label],.page-tableau-bord-competences-transversales .EN02 span[name=label]
+ {display:none;} 
+.page-tableau-bord-competences-formations .EN02:hover::after, .page-tableau-bord-competences-transversales .EN02:hover::after
+ {content: "Remarquable"}
+
+.page-tableau-bord-competences-formations .EN03 span[name=label], .page-tableau-bord-competences-transversales .EN03 span[name=label]
+ {display:none;} 
+.page-tableau-bord-competences-formations .EN03:hover::after, .page-tableau-bord-competences-transversales .EN03:hover::after
+ {content: "Satisfaisant"}
+
+.page-tableau-bord-competences-formations .EN04 span[name=label], .page-tableau-bord-competences-transversales .EN04 span[name=label]
+ {display:none;} 
+.page-tableau-bord-competences-formations .EN04:hover::after, .page-tableau-bord-competences-transversales .EN04:hover::after
+ {content: "Insatisfaisant"}
+
 
 /**** global ****/
 #main-body[userrole=etudiant] #navbar-home { display:none;}
@@ -103,8 +130,9 @@ div.first-node {color:#FFFFFF;} /* libellés des pages en blanc (placé ici parc
 body[userrole='etudiant'] .prenom_nom {display:none}
 
 /**** page bienvenue ****/
-.formation-actuelle .btn {color:white;}
-#main-portfolio #portfolio-container .formation-actuelle a {color:white;}
+.formation-actuelle .btn {color:#0F059C;}
+.formation-actuelle .select-label .btn {border: 1px solid #0F059C;}
+/* #main-portfolio #portfolio-container .formation-actuelle a {color:#0F059C} */
 
 
 /**** page consentement ****/
@@ -117,15 +145,30 @@ body[userrole='etudiant'] .prenom_nom {display:none}
 .competences-hors-referentiel .image-gauche .resource-node {
   position:relative; top:50%; transform:translateY(-50%);   /* centrer le logo verticalement par rapport au texte */
 }
+
+.formations-actuelles .texte-droit .resource-node,
+.autres-formations .texte-droit .resource-node,
+.competences-hors-referentiel .image-gauche .resource-node {
+  position:relative; top:50%; transform:translateY(-50%);   /* centrer le texte verticalement par rapport au logo */
+}
+
 .formation-element .niveau-developpement div[name=cnt-div],
 .competences-hors-referentiel .niveau-developpement-hors-referentiel div[name=cnt-div] {margin-left:2em;}
 .formation-element .apprentissage-critique div[name=cnt-div],
 .competences-hors-referentiel .apprentissage-critique-hors-referentiel div[name=cnt-div] {margin-left:3em;}
+
+/* Compétences personnalisées changent de sous-sections à page le 23-08-2022 */
+.Xcompetence-hors-referentiel .niveau-developpement-hors-referentiel div[name=cnt-div] {margin-left:2em;}
+.Xcompetence-hors-referentiel .apprentissage-critique-hors-referentiel div[name=cnt-div] {margin-left:3em;}
+
+
 .standard-resource-xwide .formation-actuelle {
   margin-left:auto; margin-right:auto;
 }
 .competence-referentiel > div.node-header,
-.competence-hors-referentiel > div.node-header {
+.competence-hors-referentiel > div.node-header,
+.Xcompetence-hors-referentiel > div.node-header  /* Compétences personnalisées changent de sous-sections à page le 23-08-2022 */
+{  
   color:white; background-color:#0F059C;   /* placé ici pour que ça ne sorte pas dans les booîtes de choix de la section Mes Actions */
 }
 #main-portfolio #portfolio-container .competence-hors-referentiel > div.node-header .collapsible,
@@ -145,10 +188,20 @@ body[userrole='etudiant'] .prenom_nom {display:none}
 .page-traces .trace-etudiant-texte .node-header {
   color:#ffffff; background-color:#1F92F8;
 }
+
 .page-traces .texte-droit .resource-node {
   position:relative; top:50%; transform:translateY(-50%);  /* centrer le texte verticalement par rapport au logo */
 }
+
+.page-traces .image-gauche .resource-node {
+  position:relative; top:50%; transform:translateY(-50%);  /* centrer le logo verticalement par rapport au texte */
+}
+
 /* .page-traces .document-etudiant .td1, .page-traces .url-etudiant .td1, .page-traces .oembed-etudiant .td1, .page-traces .texte-etudiant .td1 {display:none;}  n'est plus utilisé */
+
+.collection-traces > div.node-header {  
+  color:white; background-color:#0F059C;   /* placé ici pour que ça ne sorte pas dans les booîtes de choix de la section Mes Actions */
+}
 
 
 /**** pages actions ****/
@@ -157,23 +210,46 @@ body[userrole='etudiant'] .prenom_nom {display:none}
 .page-action-sae-evaluateurs-etudiant .libelle-droit .resource-node,
 .page-action-stage .libelle-droit .resource-node,
 .page-action-autre .libelle-droit .resource-node {
-  position:relative; top:50%; transform:translateY(-50%);  /* centrer le libellé verticalement par rapport au logo */
+  position:relative; top:50%; transform:translateY(-50%);  /* centrer le texte/libellé verticalement par rapport au logo */
 }
+
+.section-actions .image-gauche .resource-node,
+.page-action-sae-evaluateurs-auteur .image-gauche .resource-node,
+.page-action-sae-evaluateurs-etudiant .image-gauche .resource-node,
+.page-action-stage .image-gauche .resource-node,
+.page-action-autre .image-gauche .resource-node {
+  position:relative; top:50%; transform:translateY(-50%);  /* centrer le logo verticalement par rapport au texte/libellé */
+}
+
+.page-action-sae-evaluateurs-auteur .libelle-droit .resource-node,
+.page-action-sae-evaluateurs-etudiant .libelle-droit .resource-node,
+.page-action-stage .libelle-droit .resource-node,
+.page-action-autre .libelle-droit .resource-node {
+  padding-left:20px;
+}
+
 .page-action-sae-evaluateurs-auteur .first-node .sharing-button,
 .page-action-sae-evaluateurs-etudiant .first-node .sharing-button,
 .page-action-stage-evaluateurs-etudiant .first-node .sharing-button,
 .page-action-stage-evaluateurs-auteur .first-node .sharing-button,
 .page-action-stage .first-node .sharing-button,
 .page-action-autre .first-node .sharing-button {display:none;}
+
 /* .page-action-sae-evaluateurs-auteur .document-instructions .td1, .page-action-sae-evaluateurs-etudiant .document-instructions .td1 {display:none;}  n'est plus utilisé */
+
 
 
 /**** pages compétences ****/
 .createreport .libelleAction,
 .createreport .libelleApprentissage {padding-top:0px;}
+
 .page-competence-specification .libelle-droit .resource-node {
   position:relative; top:50%; transform:translateY(-50%); /* centrer le libellé verticalement par rapport au logo */
 }
+.page-competence-specification .image-gauche .resource-node {
+  position:relative; top:50%; transform:translateY(-50%); /* centrer le logo verticalement par rapport au libellé */
+}
+
 .composantes-associees .composante-essentielle-element .node-header,
 .situations-associees .situation-element .node-header {
   padding-bottom:5px; padding-top:5px;
@@ -188,7 +264,6 @@ body[userrole='etudiant'] #edit-window-body .nvalue {display:none}
 
 /* pour cacher la poubelle pour les suppressions automatiques */
 .hideBin > .node-header .fa-trash-alt {display:none}
-
 
 
 /********************************/
@@ -211,3 +286,17 @@ body[userrole='etudiant'] #edit-window-body .nvalue {display:none}
 .page-competence-niveaux .niveau-developpement div[name=cnt-div] {margin-left:2em;}
 .page-competence-niveaux .apprentissage-critique div[name=cnt-div] {margin-left:3em;}
 .page-competence-niveaux .domaine-select .td1 {display:none;}
+
+
+
+/*******************************/
+/**** portfolio formulaires ****/
+/*******************************/
+
+.section-info .image-gauche .resource-node,
+.section-alerte .image-gauche .resource-node {
+position:relative; top:50%; transform:translateY(-50%);} /* centrer le logo verticalement par rapport au texte */
+
+.section-info .texte-droit .resource-node,
+.section-alerte .texte-droit .resource-node {
+position:relative; top:50%; transform:translateY(-50%);} /* centrer le texte verticalement par rapport au logo */
