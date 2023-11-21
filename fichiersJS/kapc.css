@@ -1,7 +1,20 @@
+
+/*********************************************************/
+/**** temporaire on cache réévaluer pour l'enseignant ****/
+/************************************8********************
+body[other='enseignant'] button[onclick*='resetEvaluation'] {display:none}*/
+
+
+
 /*********************************************/
 /**** portfolios étudiants et enseignants ****/
 /****     répertoires SAés et stages      ****/
 /*********************************************/
+
+/* couleur boutons et menus*/
+#main-portfolio #portfolio-container .lien a {color:white;}
+#main-portfolio #portfolio-container .menus .dropdown .btn.add-button {color:white !important}
+#main-portfolio #portfolio-container .menus .dropdown .dropdown-item.btn.add-button:hover {color:black !important}
 
 /* cacher poubelle auto-évaluation étudiant pages compétences */
 #main-body[userrole='etudiant'] .auto-evaluation-bilan-referentiel .fa-trash-alt {display:none}
@@ -124,7 +137,7 @@ div.first-node {color:#FFFFFF;} /* libellés des pages en blanc (placé ici parc
 
 
 /**** global ****/
-#main-body[userrole=etudiant] #navbar-home { display:none;}
+/* #main-body[userrole=etudiant] #navbar-home { display:none;} ne plus cacher la maison à cause du portfolio projet pro */
 /* .traces-associees .select-trace .td1 {display:none;} n'est plus utilisé */
 /* .enseignant-select .td1 {display:none;}              n'est plus utilisé */
 body[userrole='etudiant'] .prenom_nom {display:none}
@@ -238,10 +251,13 @@ body[userrole='etudiant'] .prenom_nom {display:none}
 /* .page-action-sae-evaluateurs-auteur .document-instructions .td1, .page-action-sae-evaluateurs-etudiant .document-instructions .td1 {display:none;}  n'est plus utilisé */
 
 
+/* cacher la poubelle dans la page parente des SAés et des stages */
+.section-actions-saes .fa-trash-alt {display:none;}
+.section-actions-stages .fa-trash-alt {display:none;}
+
 
 /**** pages compétences ****/
-.createreport .libelleAction,
-.createreport .libelleApprentissage {padding-top:0px;}
+.createreport .libelleAction span[name=titre] {font-size:20px;text-transform:uppercase;}
 
 .page-competence-specification .libelle-droit .resource-node {
   position:relative; top:50%; transform:translateY(-50%); /* centrer le libellé verticalement par rapport au logo */

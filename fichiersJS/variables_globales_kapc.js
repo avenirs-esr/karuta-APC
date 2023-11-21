@@ -1,3 +1,5 @@
+//-- Dossier contenant les formulaires
+g_variables["dossier-formulaires"] = "kapc/0formulaires";
 // -- Dossier contenant les modèles pour le répertoire de formations
 g_variables["dossier-formations-modeles"] = "kapc/1formations";
 // -- Dossier contenant le répertoire de formations
@@ -30,3 +32,5 @@ g_variables["dossier-enseignants-parent"] = "portfolios-enseignants";
 g_variables["dossier-etudiants-modeles"] = "kapc/8etudiants";
 // -- Dossier parent pour les portfolios étudiants
 g_variables["dossier-etudiants-parent"] = "portfolios-etudiants";
+// Olivier 7 septembre 2023
+g_variables['sendemail'] = 'false';
