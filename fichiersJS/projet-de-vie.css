@@ -1,0 +1,125 @@
+.projet-pro div.first-node {color:#FFFFFF;} /* libellés des pages en blanc (placé ici parce que si sur l'élément est invisible dans le parent) */
+.projet-pro .asmUnit > div[name=lbl-div] {background-color: #0f7ab0}
+.projet-pro #main-portfolio #portfolio-container .boutons-couleur > div.node-header .btn-group .button {color:white}
+.projet-pro #main-portfolio #portfolio-container .asmStructure .boutons-couleur > div.node-header .btn-group .button {color:black}
+
+/* #main-portfolio #portfolio-container .add-button {margin:15px;} menus d'import à l'utilisateur */
+
+/**** page bienvenue ****/
+.projet-pro .formation-actuelle .btn {color:#0f7ab0;}
+.projet-pro .formation-actuelle .select-label .btn {border: 1px solid #0f7ab0;}
+/* .projet-pro #main-portfolio #portfolio-container .formation-actuelle a {color:#0f7ab0} */
+
+/******************* ONGLETS *********************/
+.nav-tabs .nav-link {font-weight:bold;}
+.nav-tabs .nav-link:hover {border-bottom:transparent;}
+
+/* futur métier */
+#main-portfolio #portfolio-container .fiche-metier .nav-tabs a {color:white;}
+.preview-window .fiche-metier .nav-tabs a {color:white;}
+#main-portfolio #portfolio-container .fiche-metier .nav-tabs a.active {color:#1093d3;}
+.preview-window .fiche-metier .nav-tabs a.active {color:#1093d3;}
+.fiche-metier .nav-tabs {border-bottom:1px solid #1093d3;}
+.fiche-metier .nav-tabs .nav-link {background-color:#1093d3;}
+.fiche-metier .nav-tabs .nav-link.active {background-color:#f6f8f9; border-color: #1093d3 #1093d3 #f6f8f9;}
+
+/* future formation */
+#main-portfolio #portfolio-container .fiche-formation .nav-tabs a {color:white;}
+.preview-window .fiche-formation .nav-tabs a {color: white;}
+#main-portfolio #portfolio-container .fiche-formation .nav-tabs a.active {color:#3da334;}
+.preview-window .fiche-formation .nav-tabs a.active {color:#3da334;}
+.fiche-formation .nav-tabs {border-bottom:1px solid #3da334;}
+.fiche-formation .nav-tabs .nav-link {background-color:#3da334;}
+.fiche-formation .nav-tabs .nav-link.active {background-color:#f6f8f9; border-color: #3da334 #3da334 #f6f8f9;}
+
+/* future mobilité */
+#main-portfolio #portfolio-container .fiche-mobilite .nav-tabs a {color:white;}
+.preview-window .fiche-mobilite .nav-tabs a {color:white;}
+#main-portfolio #portfolio-container .fiche-mobilite .nav-tabs a.active {color:#cc3399;}
+.preview-window .fiche-mobilite .nav-tabs a.active {color:#cc3399;}
+.fiche-mobilite .nav-tabs {border-bottom:1px solid #cc3399;}
+.fiche-mobilite .nav-tabs .nav-link {background-color:#cc3399;}
+.fiche-mobilite .nav-tabs .nav-link.active {background-color:#f6f8f9; border-color: #cc3399 #cc3399 #f6f8f9;}
+
+/* futur autre */
+#main-portfolio #portfolio-container .fiche-futur-autre .nav-tabs a {color:white;}
+.preview-window .fiche-futur-autre .nav-tabs a {color:white;}
+#main-portfolio #portfolio-container .fiche-futur-autre .nav-tabs a.active {color:#e36c09;}
+.preview-window .fiche-futur-autre .nav-tabs a.active {color:#e36c09;}
+.fiche-futur-autre .nav-tabs {border-bottom:1px solid #e36c09;}
+.fiche-futur-autre .nav-tabs .nav-link {background-color:#e36c09;}
+.fiche-futur-autre .nav-tabs .nav-link.active {background-color:#f6f8f9; border-color: #e36c09 #e36c09 #f6f8f9;}
+
+/* trajectoire */
+#main-portfolio #portfolio-container .fiche-parcours-possible .nav-tabs a {color:white;}
+.preview-window .fiche-parcours-possible .nav-tabs a {color:white;}
+#main-portfolio #portfolio-container .fiche-parcours-possible .nav-tabs a.active {color:#1093d3;}
+.preview-window .fiche-parcours-possible .nav-tabs a.active {color:#1093d3;}
+.fiche-parcours-possible .nav-tabs {border-bottom:1px solid #1093d3;}
+.fiche-parcours-possible .nav-tabs .nav-link {background-color:#1093d3;}
+.fiche-parcours-possible .nav-tabs .nav-link.active {background-color:#f6f8f9; border-color: #1093d3 #1093d3 #f6f8f9;}
+
+/* feedback */
+#main-portfolio #portfolio-container .fiche-feedback .nav-tabs a {color:white;}
+.preview-window .fiche-feedback .nav-tabs a {color:white;}
+#main-portfolio #portfolio-container .fiche-feedback .nav-tabs a.active {color:#000000;}
+.preview-window .fiche-feedback .nav-tabs a.active {color:#000000;}
+.fiche-feedback .nav-tabs {border-bottom:1px solid #000000;}
+.fiche-feedback .nav-tabs .nav-link {background-color:#000000;}
+.fiche-feedback .nav-tabs .nav-link.active {background-color:#f6f8f9; border-color: #000000 #000000 #f6f8f9;}
+
+/* me connaitre */
+#main-portfolio #portfolio-container .onglets-meconnaitre .nav-tabs a {color:white;}
+.preview-window .onglets-meconnaitre .nav-tabs a {color:white;}
+#main-portfolio #portfolio-container .onglets-meconnaitre .nav-tabs a.active {color:#1093d3;}
+.preview-window .onglets-meconnaitre .nav-tabs a.active {color:#1093d3;}
+.onglets-meconnaitre .nav-tabs {border-bottom:1px solid #1093d3;}
+.onglets-meconnaitre .nav-tabs .nav-link {background-color:#1093d3;}
+.onglets-meconnaitre .nav-tabs .nav-link.active {background-color:#ffffff; border-color: #1093d3 #1093d3 #ffffff;}
+
+/* formations */
+#main-portfolio #portfolio-container .onglets-formations .nav-tabs a {color:white;}
+.preview-window .onglets-formations .nav-tabs a {color:white;}
+#main-portfolio #portfolio-container .onglets-formations .nav-tabs a.active {color:#1093d3;}
+.preview-window .onglets-formations .nav-tabs a.active {color:#1093d3;}
+.onglets-formations .nav-tabs {border-bottom:1px solid #1093d3;}
+.onglets-formations .nav-tabs .nav-link {background-color:#1093d3;}
+.onglets-formations .nav-tabs .nav-link.active {background-color:#ffffff; border-color: #1093d3 #1093d3 #ffffff;}
+
+/* expériences */
+#main-portfolio #portfolio-container .onglets-experiences .nav-tabs a {color:white;}
+.preview-window .onglets-experiences .nav-tabs a {color:white;}
+#main-portfolio #portfolio-container .onglets-experiences .nav-tabs a.active {color:#1093d3;}
+.preview-window .onglets-experiences .nav-tabs a.active {color:#1093d3;}
+.onglets-experiences .nav-tabs {border-bottom:1px solid #1093d3;}
+.onglets-experiences .nav-tabs .nav-link {background-color:#1093d3;}
+.onglets-experiences .nav-tabs .nav-link.active {background-color:#ffffff; border-color: #1093d3 #1093d3 #ffffff;}
+
+
+/******************* alignement crayons formulaires *********************/
+.asmContext.standard-resource-xwide.texte-etablissement .edit-bar {margin-right:0px;}
+.asmContext.standard-resource-xwide.texte-diplome .edit-bar {margin-right:0px;}
+.asmContext.standard-resource-xwide.texte-entreprise .edit-bar {margin-right:0px;}
+.asmContext.standard-resource-xwide.texte-lieu-entreprise .edit-bar {margin-right:0px;}
+
+
+/*** page synthèse ***/
+.ma-synthese .tableau-synthese1 .createreport {margin-top:0px;}
+.ma-synthese .tableau-synthese2 .createreport {margin-left:30px; margin-right:30px;}
+.ma-synthese .tableau-synthese2 .createreport .fa-binoculars {margin-right:30px;}
+.ma-synthese .tableau-synthese3 .createreport {margin-left:30px; margin-right:30px;}
+.ma-synthese .tableau-synthese4 .createreport {margin-left:30px; margin-right:30px;}
+@media print {.ma-synthese  div[name=lbl-div] {display:none;}}
+@media print {#saved-window {display:none;}}
+.ma-synthese span[name=code] {display:none;}
+
+/*** contraste bouton collection de traces dans preview-window ***/
+.preview-window button {background-color:black;}
+.preview-window .btn {color:white;}
+.preview-window .dropdown-menu {background-color:black;}
+.preview-window .dropdown-item {color:white;}
+.preview-window .dropdown-item:hover {color:black;}
+
+/*** cacher code compétence dans tableau page Synthèse ***/
+.competenceTableau span[name=code] {display:none;}
+

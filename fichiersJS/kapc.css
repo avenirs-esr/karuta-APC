@@ -1,9 +1,14 @@
 
 /*********************************************************/
 /**** temporaire on cache réévaluer pour l'enseignant ****/
-/************************************8********************
-body[other='enseignant'] button[onclick*='resetEvaluation'] {display:none}*/
+/************************************8********************/
+/*body[other='enseignant'] button[onclick*='resetEvaluation'] {display:none}*/
 
+
+/*********************************************/
+/**** portfolios enseignants              ****/
+/*********************************************/
+body[other='enseignant'] #portfolio_bar {display:none}
 
 
 /*********************************************/
@@ -66,26 +71,69 @@ div.first-node {color:#FFFFFF;} /* libellés des pages en blanc (placé ici parc
   color:#FFFFFF !important; background-color:#FE0303 !important; padding:6px;
 }
 
+/* affichage des évaluations des compétences dans le tableau de bord du bilan */
+
+.page-tableau-bord-competences-formations .EN01 span[name=label], .page-tableau-bord-competences-transversales .EN01 span[name=label] {display:none;} 
+.page-tableau-bord-competences-formations .EN02 span[name=label], .page-tableau-bord-competences-transversales .EN02 span[name=label] {display:none;} 
+.page-tableau-bord-competences-formations .EN03 span[name=label], .page-tableau-bord-competences-transversales .EN03 span[name=label] {display:none;} 
+.page-tableau-bord-competences-formations .EN04 span[name=label], .page-tableau-bord-competences-transversales .EN04 span[name=label] {display:none;} 
+.page-tableau-bord-competences-formations .EA01 span[name=label], .page-tableau-bord-competences-transversales .EA01 span[name=label] {display:none;} 
+.page-tableau-bord-competences-formations .EA02 span[name=label], .page-tableau-bord-competences-transversales .EA02 span[name=label] {display:none;} 
+.page-tableau-bord-competences-formations .EA03 span[name=label], .page-tableau-bord-competences-transversales .EA03 span[name=label] {display:none;} 
+.page-tableau-bord-competences-formations .EA04 span[name=label], .page-tableau-bord-competences-transversales .EA04 span[name=label] {display:none;} 
+
+
+.page-tableau-bord-competences-formations .EN01, .page-tableau-bord-competences-transversales .EN01 {position: relative}
+.page-tableau-bord-competences-formations .EN02, .page-tableau-bord-competences-transversales .EN02 {position: relative}
+.page-tableau-bord-competences-formations .EN03, .page-tableau-bord-competences-transversales .EN03 {position: relative}
+.page-tableau-bord-competences-formations .EN04, .page-tableau-bord-competences-transversales .EN04 {position: relative}
+.page-tableau-bord-competences-formations .EA01, .page-tableau-bord-competences-transversales .EA01 {position: relative}
+.page-tableau-bord-competences-formations .EA02, .page-tableau-bord-competences-transversales .EA02 {position: relative}
+.page-tableau-bord-competences-formations .EA03, .page-tableau-bord-competences-transversales .EA03 {position: relative}
+.page-tableau-bord-competences-formations .EA04, .page-tableau-bord-competences-transversales .EA04 {position: relative}
+
+
+.page-tableau-bord-competences-formations .EN01:after, .page-tableau-bord-competences-transversales .EN01:after {content: "Excellent";position: absolute;display:none;}
+.page-tableau-bord-competences-formations .EN02:after, .page-tableau-bord-competences-transversales .EN02:after {content: "Remarquable";position: absolute;display:none;}
+.page-tableau-bord-competences-formations .EN03:after, .page-tableau-bord-competences-transversales .EN03:after {content: "Satisfaisant";position: absolute;display:none;}
+.page-tableau-bord-competences-formations .EN04:after, .page-tableau-bord-competences-transversales .EN04:after {content: "Insatisfaisant";position: absolute;display:none;}
+.page-tableau-bord-competences-formations .EA01:after, .page-tableau-bord-competences-transversales .EA01:after {content: "Féliciations du jury";position: absolute;display:none;}
+.page-tableau-bord-competences-formations .EA02:after, .page-tableau-bord-competences-transversales .EA02:after {content: "Validé avec brio";position: absolute;display:none;}
+.page-tableau-bord-competences-formations .EA03:after, .page-tableau-bord-competences-transversales .EA03:after {content: "Satisfaisant";position: absolute;display:none;}
+.page-tableau-bord-competences-formations .EA04:after, .page-tableau-bord-competences-transversales .EA04:after {content: "Insatisfaisant";position: absolute;display:none;}
+
+
+.page-tableau-bord-competences-formations .EN01:hover:after, .page-tableau-bord-competences-transversales .EN01:hover::after,
+.page-tableau-bord-competences-formations .EN02:hover:after, .page-tableau-bord-competences-transversales .EN02:hover::after,
+.page-tableau-bord-competences-formations .EN03:hover:after, .page-tableau-bord-competences-transversales .EN03:hover::after,
+.page-tableau-bord-competences-formations .EN04:hover:after, .page-tableau-bord-competences-transversales .EN04:hover::after,
+.page-tableau-bord-competences-formations .EA01:hover:after, .page-tableau-bord-competences-transversales .EA01:hover::after,
+.page-tableau-bord-competences-formations .EA02:hover:after, .page-tableau-bord-competences-transversales .EA02:hover::after,
+.page-tableau-bord-competences-formations .EA03:hover:after, .page-tableau-bord-competences-transversales .EA03:hover::after,
+.page-tableau-bord-competences-formations .EA04:hover:after, .page-tableau-bord-competences-transversales .EA04:hover::after
+{top: -30px;left:20px;color:white;display:block;background-color:black;padding:5px;width:fit-content}
+
+
 /* évaluation des apprentissages critiques */
-.sect-evals .EVAL0:hover span::after {content: "non évalué"}
+.sect-evals .EVAL0:hover span::after {content: "Gris"}
 .EVAL0 {
   background-image:url("../../karuta/img/gray.png"); background-repeat:no-repeat; background-position:10px 9px;
   display:inline-block; padding-left:40px;
 }
 
-.sect-evals .EVAL1:hover span::after {content: "vert"}
+.sect-evals .EVAL1:hover span::after {content: "Vert"}
 .EVAL1 {
   background-image:url("../../karuta/img/green.png"); background-repeat:no-repeat; background-position:10px 9px;
   display:inline-block; padding-left:40px;
 }
 
-.sect-evals .EVAL2:hover span::after {content: "orange"}
+.sect-evals .EVAL2:hover span::after {content: "Orange"}
 .EVAL2 {
   background-image:url("../../karuta/img/orange.png"); background-repeat:no-repeat; background-position:10px 9px;
   display:inline-block; padding-left:40px;
 }
 
-.sect-evals .EVAL3:hover span::after {content: "rouge"}
+.sect-evals .EVAL3:hover span::after {content: "Rouge"}
 .EVAL3 {
   background-image:url("../../karuta/img/red.png"); background-repeat:no-repeat; background-position:10px 9px;
   display:inline-block; padding-left:40px;
@@ -113,27 +161,6 @@ div.first-node {color:#FFFFFF;} /* libellés des pages en blanc (placé ici parc
 
 .sect-evals {padding-right:0px; padding-bottom:5px; padding-top:5px; margin-left:-20px}
 
-
-/* affichage des évaluations des compétences dans le tableau de bord du bilan */
-.page-tableau-bord-competences-formations .EN01 span[name=label], .page-tableau-bord-competences-transversales .EN01 span[name=label] 
- {display:none;} 
-.page-tableau-bord-competences-formations .EN01:hover::after, .page-tableau-bord-competences-transversales .EN01:hover::after
- {content: "Excellent"}
-
-.page-tableau-bord-competences-formations .EN02 span[name=label],.page-tableau-bord-competences-transversales .EN02 span[name=label]
- {display:none;} 
-.page-tableau-bord-competences-formations .EN02:hover::after, .page-tableau-bord-competences-transversales .EN02:hover::after
- {content: "Remarquable"}
-
-.page-tableau-bord-competences-formations .EN03 span[name=label], .page-tableau-bord-competences-transversales .EN03 span[name=label]
- {display:none;} 
-.page-tableau-bord-competences-formations .EN03:hover::after, .page-tableau-bord-competences-transversales .EN03:hover::after
- {content: "Satisfaisant"}
-
-.page-tableau-bord-competences-formations .EN04 span[name=label], .page-tableau-bord-competences-transversales .EN04 span[name=label]
- {display:none;} 
-.page-tableau-bord-competences-formations .EN04:hover::after, .page-tableau-bord-competences-transversales .EN04:hover::after
- {content: "Insatisfaisant"}
 
 
 /**** global ****/
@@ -250,14 +277,22 @@ body[userrole='etudiant'] .prenom_nom {display:none}
 
 /* .page-action-sae-evaluateurs-auteur .document-instructions .td1, .page-action-sae-evaluateurs-etudiant .document-instructions .td1 {display:none;}  n'est plus utilisé */
 
-
-/* cacher la poubelle dans la page parente des SAés et des stages */
+/* cacher la poubelle dans la page parente des SAés */
 .section-actions-saes .fa-trash-alt {display:none;}
-.section-actions-stages .fa-trash-alt {display:none;}
 
+/* cacher les boutons dans la page parente des stages */
+.section-actions-stages .fa-trash-alt {display:none;}
+.section-actions-stages .fa-pencil-alt {display:none;}
+.section-actions-stages .fa-arrow-up {display:none;}
+
+/* cacher les boutons dans la page parente des actions autre */
+.section-actions-autres .fa-trash-alt {display:none;}
+.section-actions-autres .fa-pencil-alt {display:none;}
+.section-actions-autres .fa-arrow-up {display:none;}
 
 /**** pages compétences ****/
-.createreport .libelleAction span[name=titre] {font-size:20px;text-transform:uppercase;}
+.createreport .libelleAction span[name=titre] {font-size:15px;text-transform:uppercase;}
+.createreport .libelleNiveau:has(div:empty)  {display:none;}
 
 .page-competence-specification .libelle-droit .resource-node {
   position:relative; top:50%; transform:translateY(-50%); /* centrer le libellé verticalement par rapport au logo */
@@ -281,6 +316,13 @@ body[userrole='etudiant'] #edit-window-body .nvalue {display:none}
 /* pour cacher la poubelle pour les suppressions automatiques */
 .hideBin > .node-header .fa-trash-alt {display:none}
 
+/* cacher la flèche pour remonter les formations dans la page parente Bilans par compétences */
+.mes-competences .fa-arrow-up {display:none;}
+
+/* Bilan de compétence - page compétance*/
+
+.tableau-apprentissages-competence .libelleNiveau>span[name=titre] {font-size:18px;}
+.tableau-apprentissages-competence .libelleAction>span[name=titre] {font-size:16px;}
 
 /********************************/
 /**** portfolios enseignants ****/

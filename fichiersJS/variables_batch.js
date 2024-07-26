@@ -6,6 +6,7 @@ g_variables['var-batch-instructions'] +=  ";karuta.batch-parts,for-each-tree,For
 g_variables['var-batch-instructions'] +=  ";karuta.batch-parts,for-each-person,For Each User@en/Pour chaque utilisateur@fr,batcher";
 g_variables['var-batch-instructions'] +=  ";karuta.batch-parts,for-each-node,For Each Node@en/Pour chaque noeud@fr,batcher";
 g_variables['var-batch-instructions'] +=  ";karuta.batch-parts,if-then-else,If Then Else@en/Si Alors Sinon@fr,batcher";
+g_variables['var-batch-instructions'] +=  ";karuta.batch-parts,batch-variable,Variable@en/Variable@fr,batcher";
 
 // composantes arbre
 g_variables['var-batch-tree']  =  "";
@@ -51,13 +52,14 @@ g_variables['var-batch-node'] +=  ";karuta.batch-parts,moveup-node,Move Up@en/Mo
 g_variables['var-batch-node'] +=  ";karuta.batch-parts,move-node,Move Node@en/Déplacer nœud@fr,batcher";
 g_variables['var-batch-node'] +=  ";karuta.batch-parts,update-node-resource,Update Node Resource@en/Mise à jour ressource du nœud@fr,batcher";
 g_variables['var-batch-node'] +=  ";karuta.batch-parts,delete-node,Delete Node@en/Supprimer nœud@fr,batcher";
+g_variables['var-batch-node'] +=  ";karuta.batch-parts,submitall,Submit for All@en/Soumettre pour tous@fr,batcher";
 
 // compsantes metadata
 g_variables['var-batch-metadata']  = "";
-g_variables['var-batch-metadata'] +=  "karuta.batch-parts,update-metadata,Update Metadata@en/Mise à jour métadonnées@fr,batcher";
-g_variables['var-batch-metadata'] +=  ";karuta.batch-parts,update-metadata-wad,Update WAD Metadata@en/Mise à jour métadonnées WAD@fr,batcher";
+g_variables['var-batch-metadata'] +=  "karuta.batch-parts,update-metadata,Update Metadata (Node)@en/Mise à jour métadonnées (noeud)@fr,batcher";
+g_variables['var-batch-metadata'] +=  ";karuta.batch-parts,update-metadata-wad,Update WAD Metadata (Model Rights)@en/Mise à jour métadonnées WAD (droits modèles)@fr,batcher";
 g_variables['var-batch-metadata'] +=  ";karuta.batch-parts,update-metadata-epm,Update EPM Metadata (CSS)@en/Mise à jour métadonnées EPM (CSS)@fr,batcher";
-g_variables['var-batch-metadata'] +=  ";karuta.batch-parts,update-rights,Update Rights@en/Mise à jour droits@fr,batcher";
+g_variables['var-batch-metadata'] +=  ";karuta.batch-parts,update-rights,Update Rights (Instance Rights)@en/Mise à jour droits (droits instances)@fr,batcher";
 
 // composantes refresh
 g_variables['var-batch-refresh']  = "";
