@@ -11,6 +11,7 @@
 body[other='enseignant'] #portfolio_bar {display:none}
 
 
+
 /*********************************************/
 /**** portfolios étudiants et enseignants ****/
 /****     répertoires SAés et stages      ****/
@@ -37,6 +38,9 @@ div.first-node {color:#FFFFFF;} /* libellés des pages en blanc (placé ici parc
 #main-portfolio #portfolio-container .menus a,
 #main-portfolio #portfolio-container .add-button,
 #main-portfolio #portfolio-container .sharing-button {color:white; background-color:black;}
+
+/* bouton jumelles (preview) affiché en bleu comme un hyperlien */
+#main-portfolio #portfolio-container .preview-button {color:#0F059C;}
 
 /* menus envoyer des évaluations par les pairs et tuteurs pro */
 #main-portfolio #portfolio-container button.add-button[onclick*="soumettreAutres"] {background-color:red}
@@ -292,7 +296,8 @@ body[userrole='etudiant'] .prenom_nom {display:none}
 
 /**** pages compétences ****/
 .createreport .libelleAction span[name=titre] {font-size:15px;text-transform:uppercase;}
-.createreport .libelleNiveau:has(div:empty)  {display:none;}
+.createreport .libelleNiveau:has(div:first-child:empty)  {display:none;}
+.createreport .libelleAction:has(div:empty)  {display:none;}
 
 .page-competence-specification .libelle-droit .resource-node {
   position:relative; top:50%; transform:translateY(-50%); /* centrer le libellé verticalement par rapport au logo */
@@ -335,6 +340,7 @@ body[userrole='etudiant'] #edit-window-body .nvalue {display:none}
 .nbelement .td2 {width:10%}
 .nbelement .td3 {width:10%}
 
+.kapc-enseignant .createreport {padding-left:20px;}
 
 
 /*************************************/

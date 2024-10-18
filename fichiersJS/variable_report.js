@@ -68,8 +68,6 @@ g_variables['var-report-display'] += ";karuta.report-parts,first-last-name,User 
 g_variables['var-report-display'] += ";karuta.report-parts,show-sharing,Show Sharing@en/Afficher les partages@fr,reporter";
 g_variables['var-report-display'] += ";karuta.report-parts,menu,Menu@en/Menu@fr,reporter";
 g_variables['var-report-display'] += ";karuta.report-parts,refresh-button,Refresh Dashboard@en/Rafraîchir tableau de bord@fr,reporter";
-g_variables['var-report-display'] += ";karuta.report-parts,collapsable-section,Collapsible Section@en/Section repliable@fr,reporter";
-
 
 // boucles
 g_variables['var-report-loops']  = "";

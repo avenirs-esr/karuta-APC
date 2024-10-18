@@ -419,6 +419,17 @@ function portfolioExists(searchvalue) {
 }
 //=====================================================================
 
+function testTextNotEmpty(semtag,uuid) {
+	if (uuid == null)
+		uuid = $("#page").attr('uuid');
+	const nodes = $("*:has(>metadata[semantictag*="+semtag+"])",UICom.structure.ui[uuid].node);
+	if ($("asmResource",nodes[0]).length==3) {
+		resource = $("asmResource[xsi_type!='nodeRes'][xsi_type!='context']",nodes[0]); 
+	} else {
+		resource = $("asmResource[xsi_type='nodeRes']",nodes[0]);
+	}
+	return($("text",resource).text()!="");
+}
 
 
 //# sourceURL=kapc-commun.js

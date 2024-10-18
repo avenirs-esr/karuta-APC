@@ -1,4 +1,4 @@
-// === version 1.4 2024/07/15 ===
+// === version 1.4 2024/09/09 ===
 // 1.3.5.2 valeurs du vecteur enrichi json (formation,cohorte)
 // 1.3.5.1 test si submitall dans soumettreAutres()
 // 1.3.4 fermeture balises xml <br> et <img> dans feedback
@@ -104,22 +104,30 @@ function getPreviewSharedAPCURL(uuid,role) {
 function testSiEvalDemandee(nodeid)
 {
 	const datedemandeid = $("*:has(>metadata[semantictag*=demande-eval])",$(UICom.structure.ui[nodeid].node)).attr("id");
-	const date = UICom.structure.ui[datedemandeid].resource.getAttributes()['text'];
-	if (date!="")
-		return false;
-	else
+	if (datedemandeid!=undefined) {
+		const date = UICom.structure.ui[datedemandeid].resource.getAttributes()['text'];
+		if (date!=undefined && date!="")
+			return false;
+		else
+			return true;
+	} else {
 		return true;
+	}
 }
 
 function testSiEvalEnseignantDemandee(nodeid)
 {
 	const pageid = $("#page").attr('uuid');
 	const datedemandeid = $("*:has(>metadata[semantictag*=date-dem-eval])",$(UICom.structure.ui[pageid].node)).attr("id");
-	const date = UICom.structure.ui[datedemandeid].resource.getAttributes()['text'];
-	if (date!="")
-		return false;
-	else
+	if (datedemandeid!=undefined) {
+		const date = UICom.structure.ui[datedemandeid].resource.getAttributes()['text'];
+		if (date!=undefined && date!="")
+			return false;
+		else
+			return true;
+	} else {
 		return true;
+	}
 }
 
 function testSiAfficherDemande(nodeid)
@@ -158,6 +166,18 @@ function testTuteurCodeNotEmpty(uuid) {
 		uuid = $("#page").attr('uuid');
 	const tuteur = $("asmContext:has(metadata[semantictag='tuteur-select'])",UICom.structure.ui[uuid].node);
 	return (tuteur.length>0);
+}
+
+function testNotSubmittedEtEnseignantCodeNotEmpty(uuid,semtag) {
+	if (uuid == null)
+		uuid = $("#page").attr('uuid');
+	const nodeid = $("*:has(>metadata[semantictag='"+semtag+"'])",UICom.structure.ui[uuid].node).attr("id");
+	let notsubmit = true
+	if (nodeid!=undefined) {
+		notsubmit = testNotSubmitted(nodeid);
+	}
+	const enseignants = $("asmContext:has(metadata[semantictag='enseignant-select'])",UICom.structure.ui[uuid].node);
+	return (notsubmit && enseignants.length>0);
 }
 
 function testEnseignantCodeNotEmpty(uuid) {
@@ -575,6 +595,7 @@ function majEvaluation(nodeid,sharetoemail) {
 	var text = " " + new Date().toLocaleString() + " à " + sharetoemail;
 	UICom.structure.ui[demandeid].resource.text_node[LANGCODE].text(text);
 	UICom.structure.ui[demandeid].resource.save();
+	UIFactory.Node.reloadUnit();
 }
 
 
@@ -1300,6 +1321,29 @@ function displayFeedback(destid,date,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,type) {
 	let html = "<tr>";
 	html += "<td>"+a6+"</td>";
 	html += "<td>"+a5.label+"<span class='button fas fa-binoculars' onclick=\"previewPage('"+a5.previewURL+"',100,'previewURL',null,true)\" data-title='Aperçu' data-toggle='tooltip' data-placement='bottom' ></span></td>";
+	const date2 = (a2.indexOf("-done")>-1)? new Date(parseInt(a5.date_eval)):new Date(parseInt(a5.date_demande));
+	html += "<td>"+ date2.toLocaleString()+"</td>";
+	html += "<td>"+a5.question+"</td>";
+	const separateur = (reponse[1]!="")?" - ":"";
+	html += "<td>"+reponse[0]+"</td>";
+	if (type=='repondu')
+		html += "<td><i data-toggle='tooltip' data-title='Supprimer du tableau de bord' class='fas fa-trash-alt' onclick=\"supprimerFeedbackRepondu('"+a3+"','"+a4+"')\"></i></td>";
+	if (type=='repondre') {
+		const js = "";
+		html += "<td><i  data-toggle='tooltip' data-title='Supprimer du tableau de bord'class='fas fa-trash-alt' onclick=\"supprimerFeedbackRepondre('"+a3+"')\"></i></td>";
+	}
+	html += "</tr>";
+	$("#"+destid).append(html);
+}
+
+function displayFeedbackCompetence(destid,date,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,type) {
+	if (type==null)
+		type="none";
+	a5 = JSON.parse(a5);
+	const reponse = a5.reponse.split("|");
+	let html = "<tr>";
+	html += "<td>"+a6+"</td>";
+	html += "<td>"+a5.label+"<span class='button fas fa-binoculars' onclick=\"previewPageCompetence('"+a5.previewURL+"',100,'previewURL',null,true)\" data-title='Aperçu' data-toggle='tooltip' data-placement='bottom' ></span></td>";
 	const date2 = (a2.indexOf("-done")>-1)? new Date(parseInt(a5.date_eval)):new Date(parseInt(a5.date_demande));
 	html += "<td>"+ date2.toLocaleString()+"</td>";
 	html += "<td>"+a5.question+"</td>";
